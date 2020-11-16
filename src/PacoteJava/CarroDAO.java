@@ -78,7 +78,7 @@ public class CarroDAO {
             if (ps.executeUpdate() > 0) {
                 return "Excluido com sucesso!!!";
             } else {
-                return "Erro ao escluir!!!";
+                return "Erro ao excluir!!!";
             }
 
         } catch (SQLException ex) {

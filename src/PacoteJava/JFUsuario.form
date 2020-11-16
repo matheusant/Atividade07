@@ -3,9 +3,6 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="0"/>
-    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="99" green="99" red="99" type="rgb"/>
-    </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -27,15 +24,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" max="32767" attributes="0"/>
-          <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
+          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" pref="68" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" pref="423" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -53,7 +50,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -62,8 +59,9 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="70" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -74,7 +72,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="36" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Gerenciamento de Ve&#xed;culos"/>
+            <Property name="text" type="java.lang.String" value="Gerenciamento de Usu&#xe1;rios"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -92,58 +90,79 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel3" alignment="1" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblMensagem" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblPlaca" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblCor" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblDescricao" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblSenha" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="lblUsuario" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="lblAcesso" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNome1" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtDescricao" alignment="0" min="-2" pref="393" max="-2" attributes="0"/>
-                              <Component id="txtCor" alignment="0" min="-2" pref="139" max="-2" attributes="0"/>
-                              <Component id="txtPlaca" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtSenha" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtUsuario" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtNome" alignment="0" max="32767" attributes="0"/>
+                              <Component id="cbAcesso" alignment="0" pref="158" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                          <Component id="lblId" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="txtId" min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="280" max="32767" attributes="0"/>
               </Group>
-              <Component id="jPanel3" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblPlaca" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="txtPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblNome1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblId" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtId" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblCor" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtCor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblDescricao" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtDescricao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSenha" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblAcesso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbAcesso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="lblMensagem" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblPlaca">
+        <Component class="javax.swing.JLabel" name="lblUsuario">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="16" style="0"/>
@@ -151,10 +170,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Placa"/>
+            <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblCor">
+        <Component class="javax.swing.JLabel" name="lblSenha">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="16" style="0"/>
@@ -162,18 +181,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cor"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblDescricao">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Comic Sans MS" size="16" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
+            <Property name="text" type="java.lang.String" value="Senha"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblMensagem">
@@ -187,11 +195,11 @@
             <Property name="text" type="java.lang.String" value="Mensagem"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtPlaca">
+        <Component class="javax.swing.JTextField" name="txtNome">
         </Component>
-        <Component class="javax.swing.JTextField" name="txtCor">
+        <Component class="javax.swing.JTextField" name="txtUsuario">
         </Component>
-        <Component class="javax.swing.JTextField" name="txtDescricao">
+        <Component class="javax.swing.JTextField" name="txtSenha">
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Properties>
@@ -205,17 +213,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="btnIncluir" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="btnAlternar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                      <Component id="btnExcluir" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCadastrar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="btnAlternar" min="-2" pref="77" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="btnExcluir" min="-2" pref="79" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                       <Component id="btnPesquisar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                      <Component id="btnLimpar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="59" max="32767" attributes="0"/>
-                      <Component id="btnVoltar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <Component id="btnLimpar" min="-2" pref="77" max="-2" attributes="0"/>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
+                      <Component id="btnVoltar" min="-2" pref="76" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jPanel4" alignment="1" max="32767" attributes="0"/>
@@ -226,12 +234,12 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="btnAlternar" alignment="1" pref="33" max="32767" attributes="0"/>
+                          <Component id="btnAlternar" alignment="1" max="32767" attributes="0"/>
                           <Component id="btnExcluir" alignment="1" max="32767" attributes="0"/>
                           <Component id="btnPesquisar" alignment="1" max="32767" attributes="0"/>
-                          <Component id="btnVoltar" alignment="1" max="32767" attributes="0"/>
-                          <Component id="btnLimpar" max="32767" attributes="0"/>
-                          <Component id="btnIncluir" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnCadastrar" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnVoltar" alignment="1" pref="33" max="32767" attributes="0"/>
+                          <Component id="btnLimpar" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="17" max="32767" attributes="0"/>
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
@@ -240,7 +248,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnIncluir">
+            <Component class="javax.swing.JButton" name="btnCadastrar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="0" red="0" type="rgb"/>
@@ -251,11 +259,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="mnemonic" type="int" value="105"/>
-                <Property name="text" type="java.lang.String" value="Incluir"/>
+                <Property name="mnemonic" type="int" value="99"/>
+                <Property name="text" type="java.lang.String" value="Cadastrar"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnIncluirMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCadastrarMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnAlternar">
@@ -290,9 +298,6 @@
                 <Property name="mnemonic" type="int" value="101"/>
                 <Property name="text" type="java.lang.String" value="Excluir"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnExcluirMouseClicked"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnPesquisar">
               <Properties>
@@ -387,14 +392,26 @@
                           <Font name="Comic Sans MS" size="12" style="0"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="3" rowCount="0">
-                            <Column editable="false" title="Placa" type="java.lang.String"/>
-                            <Column editable="false" title="Cor" type="java.lang.String"/>
-                            <Column editable="false" title="Descri&#xe7;&#xe3;o" type="java.lang.String"/>
+                          <Table columnCount="5" rowCount="0">
+                            <Column editable="false" title="Nome" type="java.lang.String"/>
+                            <Column editable="false" title="Usu&#xe1;rio" type="java.lang.String"/>
+                            <Column editable="false" title="Senha" type="java.lang.String"/>
+                            <Column editable="false" title="N&#xed;vel de Acesso" type="java.lang.String"/>
+                            <Column editable="false" title="ID" type="java.lang.Integer"/>
                           </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                               <Title/>
                               <Editor/>
@@ -426,6 +443,54 @@
             </Container>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JLabel" name="lblAcesso">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="16" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nivel de Acesso"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbAcesso">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="Admin"/>
+                <StringItem index="1" value="Comum"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblNome1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="16" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nome"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblId">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="16" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ID"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtId">
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
