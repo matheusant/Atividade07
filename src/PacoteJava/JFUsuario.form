@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JLabel" name="lblUser">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="usu&#xe1;rio "/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="0"/>
     <Property name="resizable" type="boolean" value="false"/>
@@ -94,7 +104,6 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblMensagem" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -117,27 +126,35 @@
                               <Component id="txtNome" alignment="0" max="32767" attributes="0"/>
                               <Component id="cbAcesso" alignment="0" pref="158" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                           <Component id="lblId" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txtId" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="lblValorId" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblMensagem" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblUsername" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="280" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblNome1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblId" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtId" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblValorId" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -152,11 +169,15 @@
                       <Component id="lblAcesso" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cbAcesso" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="lblMensagem" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblMensagem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblUsername" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -298,6 +319,9 @@
                 <Property name="mnemonic" type="int" value="101"/>
                 <Property name="text" type="java.lang.String" value="Excluir"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnExcluirMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnPesquisar">
               <Properties>
@@ -332,6 +356,9 @@
                 <Property name="text" type="java.lang.String" value="Voltar"/>
                 <Property name="toolTipText" type="java.lang.String" value="Voltar menu principal"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnVoltarMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnLimpar">
               <Properties>
@@ -451,7 +478,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nivel de Acesso"/>
+            <Property name="text" type="java.lang.String" value="N&#xed;vel de Acesso"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cbAcesso">
@@ -486,10 +513,39 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="ID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtId">
+        <Component class="javax.swing.JLabel" name="lblValorId">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="16" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="10" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Usu&#xe1;rio:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUsername">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="10" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="usu&#xe1;rio "/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

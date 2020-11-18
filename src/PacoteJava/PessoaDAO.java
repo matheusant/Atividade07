@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class PessoaDAO {
 
@@ -53,11 +54,11 @@ public class PessoaDAO {
 
             PreparedStatement ps = getCon().prepareStatement(sql);
 
-            ps.setInt(1, pessoa.getId());
-            ps.setString(2, pessoa.getNome());
-            ps.setString(3, pessoa.getUsuario());
-            ps.setString(4, pessoa.getSenha());
-            ps.setString(5, pessoa.getAcesso());
+            ps.setInt(5, pessoa.getId());
+            ps.setString(1, pessoa.getNome());
+            ps.setString(2, pessoa.getUsuario());
+            ps.setString(3, pessoa.getSenha());
+            ps.setString(4, pessoa.getAcesso());
             
 
             if (ps.executeUpdate() > 0) {
@@ -100,6 +101,7 @@ public class PessoaDAO {
             PreparedStatement ps = getCon().prepareStatement(sql);
 
             ResultSet rs = ps.executeQuery();
+            
 
             if (rs != null) {
                 while (rs.next()) {
@@ -118,6 +120,28 @@ public class PessoaDAO {
         } catch (SQLException e) {
             return null;
         }
+    }
+    
+    public boolean verificarLogin(String loginUsu, String senhaUsu){
+        boolean logado = false;
+        String sql ="select * from tbusuario where loginUsu = ? and senhaUsu = ?";
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ps.setString(1, loginUsu);
+            ps.setString(2, senhaUsu);
+            
+            
+            ResultSet rs = ps.executeQuery();
+                
+            if(rs.next()){
+                logado = true;
+            }
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return logado;
+        
     }
 
 }

@@ -13,9 +13,15 @@ public class JFUsuario extends javax.swing.JFrame {
     /**
      * Creates new form JFUsuario
      */
-    public JFUsuario() {
+    public JFUsuario(String usuario) {
         initComponents();
         lblMensagem.setText("");
+        lblId.setText("");
+        lblUsername.setText(usuario);
+    }
+
+    private JFUsuario() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -27,6 +33,7 @@ public class JFUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblUser = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -50,7 +57,12 @@ public class JFUsuario extends javax.swing.JFrame {
         cbAcesso = new javax.swing.JComboBox<>();
         lblNome1 = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
-        txtId = new javax.swing.JTextField();
+        lblValorId = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblUsername = new javax.swing.JLabel();
+
+        lblUser.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblUser.setText("usuário ");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
@@ -121,6 +133,11 @@ public class JFUsuario extends javax.swing.JFrame {
         btnExcluir.setForeground(new java.awt.Color(255, 255, 255));
         btnExcluir.setMnemonic('e');
         btnExcluir.setText("Excluir");
+        btnExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnExcluirMouseClicked(evt);
+            }
+        });
 
         btnPesquisar.setBackground(new java.awt.Color(0, 0, 153));
         btnPesquisar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
@@ -139,6 +156,11 @@ public class JFUsuario extends javax.swing.JFrame {
         btnVoltar.setMnemonic('v');
         btnVoltar.setText("Voltar");
         btnVoltar.setToolTipText("Voltar menu principal");
+        btnVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVoltarMouseClicked(evt);
+            }
+        });
 
         btnLimpar.setBackground(new java.awt.Color(0, 0, 153));
         btnLimpar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
@@ -245,7 +267,7 @@ public class JFUsuario extends javax.swing.JFrame {
 
         lblAcesso.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         lblAcesso.setForeground(new java.awt.Color(255, 255, 255));
-        lblAcesso.setText("Nivel de Acesso");
+        lblAcesso.setText("Nível de Acesso");
 
         cbAcesso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Comum" }));
 
@@ -255,7 +277,17 @@ public class JFUsuario extends javax.swing.JFrame {
 
         lblId.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 255, 255));
-        lblId.setText("ID");
+
+        lblValorId.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblValorId.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Usuário:");
+
+        lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsername.setText("usuário ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -265,7 +297,6 @@ public class JFUsuario extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblMensagem)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -283,11 +314,18 @@ public class JFUsuario extends javax.swing.JFrame {
                             .addComponent(txtUsuario)
                             .addComponent(txtNome)
                             .addComponent(cbAcesso, 0, 158, Short.MAX_VALUE))
-                        .addGap(83, 83, 83)
+                        .addGap(77, 77, 77)
                         .addComponent(lblId)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(280, Short.MAX_VALUE))
+                        .addComponent(lblValorId)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblMensagem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblUsername)
+                        .addGap(67, 67, 67))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,7 +335,7 @@ public class JFUsuario extends javax.swing.JFrame {
                     .addComponent(lblNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblId)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblValorId))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario)
@@ -311,10 +349,13 @@ public class JFUsuario extends javax.swing.JFrame {
                     .addComponent(lblAcesso)
                     .addComponent(cbAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(lblMensagem)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblMensagem)
+                    .addComponent(jLabel3)
+                    .addComponent(lblUsername))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -350,6 +391,9 @@ public class JFUsuario extends javax.swing.JFrame {
         txtUsuario.setText(usuario);
         txtSenha.setText(senha);
         cbAcesso.setSelectedItem(nivelAcesso);
+        String aux = Integer.toString(id);
+        lblValorId.setText(aux);
+        lblId.setText("ID");
         
         
     }//GEN-LAST:event_tblConsultaMouseClicked
@@ -410,6 +454,10 @@ public class JFUsuario extends javax.swing.JFrame {
         pb.setUsuario(txtUsuario.getText());
         pb.setSenha(txtSenha.getText());
         pb.setAcesso((String) cbAcesso.getSelectedItem());
+        pb.setId(Integer.parseInt(lblValorId.getText()));
+        
+        
+        
         
         lblMensagem.setText(pd.alterarPessoa(pb));
         
@@ -424,6 +472,8 @@ public class JFUsuario extends javax.swing.JFrame {
         cbAcesso.setSelectedItem("Admin");
         
         lblMensagem.setText("");
+        lblValorId.setText("");
+        lblId.setText("");
         
         DefaultTableModel tbm = (DefaultTableModel) tblConsulta.getModel();
         
@@ -431,6 +481,33 @@ public class JFUsuario extends javax.swing.JFrame {
             tbm.removeRow(i);
         }
     }//GEN-LAST:event_btnLimparMouseClicked
+
+    private void btnVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVoltarMouseClicked
+        JFMenuPrincipal voltar = new JFMenuPrincipal(lblUsername.getText());
+        voltar.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnVoltarMouseClicked
+
+    private void btnExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcluirMouseClicked
+        Connection con = Conexao.abrirConexao();
+        PessoaBean pb = new PessoaBean();
+        PessoaDAO pd = new PessoaDAO(con);
+        
+        pb.setId(Integer.parseInt(lblValorId.getText()));
+        
+        Object[] opcoes = { "Sim", "Não" };
+        int i = JOptionPane.showOptionDialog(null, "Deseja realmente excluir esse usuário?\n"
+                +"ID: "+lblValorId.getText() 
+                +"\nNome: "+txtNome.getText()
+                +"\nUsuário: "+txtUsuario.getText()
+                , "Exclusão", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE
+                , null, opcoes, opcoes[0]);
+        if(i == JOptionPane.YES_NO_OPTION){
+            lblMensagem.setText(pd.deletarPessoa(pb));
+        }
+        
+        Conexao.fecharConexao(con);
+    }//GEN-LAST:event_btnExcluirMouseClicked
 
     /**
      * @param args the command line arguments
@@ -476,6 +553,7 @@ public class JFUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnVoltar;
     private javax.swing.JComboBox<String> cbAcesso;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -486,9 +564,11 @@ public class JFUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel lblMensagem;
     private javax.swing.JLabel lblNome1;
     private javax.swing.JLabel lblSenha;
+    private javax.swing.JLabel lblUser;
+    private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblValorId;
     private javax.swing.JTable tblConsulta;
-    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtSenha;
     private javax.swing.JTextField txtUsuario;

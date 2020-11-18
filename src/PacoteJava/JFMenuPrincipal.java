@@ -1,21 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package PacoteJava;
 
-/**
- *
- * @author Casa
- */
+import javax.swing.table.DefaultTableModel;
+
+import java.sql.*;
+
+import java.util.*;
+
+import javax.swing.*;
+
 public class JFMenuPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form JFMenuPrincipal
      */
-    public JFMenuPrincipal() {
+    public JFMenuPrincipal(String usuario) {
         initComponents();
+        lblUser.setText(usuario);
+
+    }
+
+    private JFMenuPrincipal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -28,36 +33,53 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnUsu = new javax.swing.JButton();
+        btnCarro = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        lblUser = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 153));
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 255));
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PacoteJava/user.png"))); // NOI18N
-        jButton1.setText("Gerenciar Usuários");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnUsu.setBackground(new java.awt.Color(102, 102, 255));
+        btnUsu.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        btnUsu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PacoteJava/user.png"))); // NOI18N
+        btnUsu.setText("Gerenciar Usuários");
+        btnUsu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnUsu.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnUsu.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnUsu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 255));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PacoteJava/carro.png"))); // NOI18N
-        jButton2.setText("Gerenciar Veículos");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnCarro.setBackground(new java.awt.Color(102, 102, 255));
+        btnCarro.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        btnCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PacoteJava/carro.png"))); // NOI18N
+        btnCarro.setText("Gerenciar Veículos");
+        btnCarro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCarro.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnCarro.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnCarro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCarroMouseClicked(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(102, 102, 255));
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        jButton3.setText("Voltar");
+        btnLogout.setBackground(new java.awt.Color(102, 102, 255));
+        btnLogout.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        btnLogout.setText("Logout");
+        btnLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLogoutMouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jLabel1.setText("Menu Principal");
@@ -79,18 +101,29 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        lblUser.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblUser.setText("usuário ");
+
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel3.setText("Bem vindo");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnUsu)
                         .addGap(53, 53, 53)
-                        .addComponent(jButton2)))
+                        .addComponent(btnCarro))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblUser)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(34, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -100,11 +133,15 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addContainerGap(15, Short.MAX_VALUE))
+                    .addComponent(btnCarro)
+                    .addComponent(btnUsu))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(lblUser))
+                    .addComponent(btnLogout, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -123,6 +160,42 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCarroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCarroMouseClicked
+        JFCarro abrir = new JFCarro(lblUser.getText());
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCarroMouseClicked
+
+    private void btnLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogoutMouseClicked
+        JFLogin abrir = new JFLogin();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnLogoutMouseClicked
+
+    private void btnUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuActionPerformed
+        Connection con = Conexao.abrirConexao();
+        String sql = "select * from tbusuario where loginUsu = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            rs.first();
+
+            if (rs.getString("nivelAcesso").equalsIgnoreCase("Admin")) {
+                JFUsuario abrir = new JFUsuario(lblUser.getText());
+                abrir.setVisible(true);
+                this.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(null, "Você não tem permissão!!");
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Você não tem permissão!!");
+        }
+
+        Conexao.fecharConexao(con);
+    }//GEN-LAST:event_btnUsuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,11 +233,13 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnCarro;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnUsu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblUser;
     // End of variables declaration//GEN-END:variables
 }

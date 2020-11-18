@@ -14,9 +14,14 @@ public class JFCarro extends javax.swing.JFrame {
     /**
      * Creates new form JFCarro
      */
-    public JFCarro() {
+    public JFCarro(String usuario) {
         initComponents();
         lblMensagem.setText("");
+        lblUsername.setText(usuario);
+    }
+
+    private JFCarro() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -48,6 +53,8 @@ public class JFCarro extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblConsulta = new javax.swing.JTable();
+        lblUsername = new javax.swing.JLabel();
+        lblUser2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
@@ -145,6 +152,11 @@ public class JFCarro extends javax.swing.JFrame {
         btnVoltar.setMnemonic('v');
         btnVoltar.setText("Voltar");
         btnVoltar.setToolTipText("Voltar menu principal");
+        btnVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVoltarMouseClicked(evt);
+            }
+        });
 
         btnLimpar.setBackground(new java.awt.Color(0, 0, 153));
         btnLimpar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
@@ -247,6 +259,14 @@ public class JFCarro extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsername.setText("usuário ");
+
+        lblUser2.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
+        lblUser2.setForeground(new java.awt.Color(255, 255, 255));
+        lblUser2.setText("Usuário:");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -254,18 +274,24 @@ public class JFCarro extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblMensagem)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblPlaca)
                             .addComponent(lblCor)
                             .addComponent(lblDescricao))
                         .addGap(23, 23, 23)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCor, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtCor, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                            .addComponent(txtDescricao)
+                            .addComponent(txtPlaca))
+                        .addContainerGap(491, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblMensagem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblUser2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblUsername)
+                        .addGap(44, 44, 44))))
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -284,7 +310,10 @@ public class JFCarro extends javax.swing.JFrame {
                     .addComponent(lblDescricao)
                     .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
-                .addComponent(lblMensagem)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblMensagem)
+                    .addComponent(lblUsername)
+                    .addComponent(lblUser2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(180, 180, 180))
@@ -415,6 +444,12 @@ public class JFCarro extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnExcluirMouseClicked
 
+    private void btnVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVoltarMouseClicked
+        JFMenuPrincipal voltar = new JFMenuPrincipal(lblUsername.getText());
+        voltar.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnVoltarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -467,6 +502,8 @@ public class JFCarro extends javax.swing.JFrame {
     private javax.swing.JLabel lblDescricao;
     private javax.swing.JLabel lblMensagem;
     private javax.swing.JLabel lblPlaca;
+    private javax.swing.JLabel lblUser2;
+    private javax.swing.JLabel lblUsername;
     private javax.swing.JTable tblConsulta;
     private javax.swing.JTextField txtCor;
     private javax.swing.JTextField txtDescricao;

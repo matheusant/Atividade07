@@ -15,7 +15,7 @@ public class Conexao {
 
             con = DriverManager.getConnection(url);
 
-            System.out.println("Conexão aberta!!!");
+            System.out.println("Conexão Aberta!!!");
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
