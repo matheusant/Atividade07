@@ -15,7 +15,15 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
      */
     public JFMenuPrincipal(String usuario) {
         initComponents();
+        Connection con = Conexao.abrirConexao();
+        PessoaDAO pd = new PessoaDAO(con);
         lblUser.setText(usuario);
+           
+            if (pd.verificarAcesso(lblUser.getText(), "Usuário")) {
+                btnUsu.setEnabled(false);
+                }
+
+        Conexao.fecharConexao(con);
 
     }
 
@@ -39,7 +47,7 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblUser = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblAcesso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
@@ -104,8 +112,8 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
         lblUser.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblUser.setText("usuário ");
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jLabel3.setText("Bem vindo");
+        lblAcesso.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblAcesso.setText("Bem vindo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -119,7 +127,7 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
                         .addGap(53, 53, 53)
                         .addComponent(btnCarro))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addComponent(lblAcesso)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblUser)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -138,7 +146,7 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
+                        .addComponent(lblAcesso)
                         .addComponent(lblUser))
                     .addComponent(btnLogout, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -174,27 +182,11 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogoutMouseClicked
 
     private void btnUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuActionPerformed
-        Connection con = Conexao.abrirConexao();
-        String sql = "select * from tbusuario where loginUsu = ?";
 
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            rs.first();
+        JFUsuario abrir = new JFUsuario(lblUser.getText());
+        abrir.setVisible(true);
+        this.setVisible(false);
 
-            if (rs.getString("nivelAcesso").equalsIgnoreCase("Admin")) {
-                JFUsuario abrir = new JFUsuario(lblUser.getText());
-                abrir.setVisible(true);
-                this.setVisible(false);
-            } else {
-                JOptionPane.showMessageDialog(null, "Você não tem permissão!!");
-            }
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Você não tem permissão!!");
-        }
-
-        Conexao.fecharConexao(con);
     }//GEN-LAST:event_btnUsuActionPerformed
 
     /**
@@ -237,9 +229,9 @@ public class JFMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnUsu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblAcesso;
     private javax.swing.JLabel lblUser;
     // End of variables declaration//GEN-END:variables
 }

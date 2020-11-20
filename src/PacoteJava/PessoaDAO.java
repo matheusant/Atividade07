@@ -143,5 +143,26 @@ public class PessoaDAO {
         return logado;
         
     }
+    
+    public boolean verificarAcesso(String loginUsu, String nivelAcesso){
+        boolean acesso = false;
+        String sql = "select * from tbusuario where loginUsu = ? and nivelAcesso = 'Usuário'";
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ps.setString(1, loginUsu);
+            
+            
+            ResultSet rs = ps.executeQuery();
+                
+            if(rs.next()){
+                acesso = true;
+            }
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return acesso;
+        
+    }
 
 }

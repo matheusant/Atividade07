@@ -269,7 +269,8 @@ public class JFUsuario extends javax.swing.JFrame {
         lblAcesso.setForeground(new java.awt.Color(255, 255, 255));
         lblAcesso.setText("Nível de Acesso");
 
-        cbAcesso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Comum" }));
+        cbAcesso.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        cbAcesso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Usuário" }));
 
         lblNome1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         lblNome1.setForeground(new java.awt.Color(255, 255, 255));
@@ -283,7 +284,7 @@ public class JFUsuario extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Usuário:");
+        jLabel3.setText("Usuário conectado:");
 
         lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(255, 255, 255));
@@ -325,7 +326,7 @@ public class JFUsuario extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblUsername)
-                        .addGap(67, 67, 67))))
+                        .addGap(31, 31, 31))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

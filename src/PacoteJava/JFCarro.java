@@ -265,7 +265,7 @@ public class JFCarro extends javax.swing.JFrame {
 
         lblUser2.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
         lblUser2.setForeground(new java.awt.Color(255, 255, 255));
-        lblUser2.setText("Usuário:");
+        lblUser2.setText("Usuário conectado:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -291,7 +291,7 @@ public class JFCarro extends javax.swing.JFrame {
                         .addComponent(lblUser2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblUsername)
-                        .addGap(44, 44, 44))))
+                        .addGap(30, 30, 30))))
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
