@@ -175,11 +175,17 @@ public class JFLogin extends javax.swing.JFrame {
             this.setVisible(false);
         }else{
             JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!!!");
+            limpaCampos();
         }
         
         Conexao.fecharConexao(con);
     }//GEN-LAST:event_btnEntrarActionPerformed
 
+    public void limpaCampos(){
+        txtLogin.setText("");
+        txtSenha.setText("");
+        txtLogin.grabFocus();
+    }
     /**
      * @param args the command line arguments
      */
